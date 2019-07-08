@@ -1,0 +1,13 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "2Iy16w6c+4oMD8TtobbO0qsCrDo=",
+			"path": "github.com/gorilla/mux",
+			"revision": "d83b6ffe499a29cc05fc977988d0392851779620",
+			"revisionTime": "2019-07-01T20:26:33Z"
+		}
+	],
+	"rootPath": "github.com/glennzw/ruthere"
+}
