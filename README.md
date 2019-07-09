@@ -3,13 +3,13 @@
 Are you there (ruthere) is a tiny endpoint to query the response code of a supplied URL. A square image is returned, the dimensions of which are the response code.
 
 For example:  
-https://ruthere.co/u/www.google.com/robots.txt will rerturn a 200x200px image.
-https://ruthere.co/u/www.google.com/nosuchpage will return a 404x404px image.
-https://ruthere.co/u/http://getstatuscode.com/503 will return a 503x503px image.
+http://ruthere.co/u/www.google.com/robots.txt will rerturn a 200x200px image.  
+http://ruthere.co/u/www.google.com/nosuchpage will return a 404x404px image.  
+http://ruthere.co/u/http://getstatuscode.com/503 will return a 503x503px image.  
 
 Non HTTP response codes are also returned for when things go wrong:  
-https://ruthere.co/u/sdasdasdsa will return a 50x50px image (failed to validate URL)
-https://ruthere.co/u/nosuchsite24324234.com will return 40x40px image (can't connect)
+http://ruthere.co/u/sdasdasdsa will return a 50x50px image (failed to validate URL)  
+http://ruthere.co/u/nosuchsite24324234.com will return 40x40px image (can't connect)  
 
  A returned image of 30x30px indicates a Panic from this code.
 
@@ -21,7 +21,7 @@ https://ruthere.co/u/nosuchsite24324234.com will return 40x40px image (can't con
 ```
 var url = "https://twitter.com";
 var newImg = new Image;
-newImg.src = "https://ruthere.co/u/" + url;
+newImg.src = "http://ruthere.co/u/" + url;
 console.log("Checking " + url)
 
 newImg.onload = function(){
@@ -34,3 +34,6 @@ newImg.onload = function(){
 }
 ```
  If you don't know why this is useful, you probably don't need it.
+
+ ## ToDo
+ Add SSL support, Heroku doesn't do this for free. Can maybe bounce it through CloudFlare.
