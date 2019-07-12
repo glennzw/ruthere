@@ -53,8 +53,9 @@ func fetchURL(w http.ResponseWriter, r *http.Request) {
 	}()
 
 	status := 1
-	vars := mux.Vars(r)
-	iurl := vars["url"]
+	//vars := mux.Vars(r)
+	//iurl := vars["url"]
+	iurl := r.URL.String()[3:] //Hack to allow ? in URL
 	remoteIP := r.RemoteAddr
 	remoteIP, _, err := net.SplitHostPort(remoteIP)
 	if err != nil {
