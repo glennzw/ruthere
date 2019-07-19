@@ -180,8 +180,8 @@ func main() {
 	r := mux.NewRouter()
 	r.SkipClean(true) //Mux doesn't like double forward slashes
 	r.HandleFunc("/", landing).Methods("GET")
-	r.HandleFunc("/u/{url:[a-z,A-Z,0-9,\\/,\\.,:,\\/\\/]*}", fetchURL).Methods("GET")   //Mux doesn't like forward slashes
-	r.HandleFunc("/j/{url:[a-z,A-Z,0-9,\\/,\\.,:,\\/\\/]*}", fetchURLJS).Methods("GET") //j endpoint for JavaScript version (thanks @KentonVarda)
+	r.HandleFunc("/u/{url:[a-z,A-Z,0-9,\\-,_,\\/,\\.,:,\\/\\/]*}", fetchURL).Methods("GET")   //Mux doesn't like forward slashes
+	r.HandleFunc("/j/{url:[a-z,A-Z,0-9,\\-,_,\\/,\\.,:,\\/\\/]*}", fetchURLJS).Methods("GET") //j endpoint for JavaScript version (thanks @KentonVarda)
 	r.NotFoundHandler = http.HandlerFunc(notFoundHandler)
 	http.ListenAndServe(":"+port, r)
 }
