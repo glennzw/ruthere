@@ -1,0 +1,41 @@
+<html>
+
+<script>
+
+var url = "https://twitter.com";
+var newImg = new Image;
+newImg.src = "http://ruthere.co/u/" + url;
+console.log("Checking " + url)
+
+newImg.onload = function(){
+    console.log(this.width);
+    if (newImg.height == 200) {
+        console.log("Twitter is up!");
+    } else {
+        console.log("Twitter broke :(");
+    }
+}
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
